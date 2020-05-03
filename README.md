@@ -19,7 +19,22 @@ From `dynamodb-sam` folder:
 2. Compile `template.yml` and generate a compiled version of the template `compiled.yml` with `sam package`command
 3. Submit the compiled template to CloudFormation and deploy your serverless application with `sam deploy`command as follows
 ```sh
+cd dynamodb-sam/
 aws s3 mb s3://<Your S3 bucket>
+sam package --template-file template.yml --s3-bucket <Your S3 bucket> --output-template-file compiled.yml
+sam deploy --template-file compiled.yml --stack-name <Your stack name> --capabilities CAPABILITY_IAM --parameter-overrides TablePrefix=<Your prefix>
+```
+
+From `lambda-sam` folder:
+1. Prepare S3 bucket to upload the code and generate a compiled version of the template `compiled.yml`. You need to manually create an S3 bucket or use an existing one to store the code.
+2. Install the external libraries for new Lambda function. The libraries need to be in the same directory and S3 location.
+2. Compile `template.yml` and generate a compiled version of the template `compiled.yml` with `sam package`command
+3. Submit the compiled template to CloudFormation and deploy your serverless application with `sam deploy`command as follows
+```sh
+cd lambda-sam/lambda_function/
+aws s3 mb s3://<Your S3 bucket>
+pip install requests -t ./
+pip install git+https://github.com/bitbankinc/python-bitbankcc.git -t ./
 sam package --template-file template.yml --s3-bucket <Your S3 bucket> --output-template-file compiled.yml
 sam deploy --template-file compiled.yml --stack-name <Your stack name> --capabilities CAPABILITY_IAM --parameter-overrides TablePrefix=<Your prefix>
 ```
