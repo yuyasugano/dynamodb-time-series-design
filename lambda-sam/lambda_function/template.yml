@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Parameters: 
+  TablePrefix:
+    Type: String
+Resources:
+  ServerlessCryptoApi:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Policies:
+        - AWSLambdaExecute # Managed Policy
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:Get*
+                - dynamodb:PutItem
+              Resource: !Sub 'arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${TablePrefix}*'      
+      Runtime: python3.7
+      Timeout: 30
+      MemorySize: 256
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref TablePrefix
+      Events:
+        IngestNewRecordEvery1Min:
+          Type: Schedule
+          Properties:
+            Input: '{"Operation": "ingest_new"}'
+            Schedule: cron(0/1 * * * ? *)  # every 1 min

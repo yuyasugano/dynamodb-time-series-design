@@ -1,0 +1,15 @@
+python_bitbankcc-0.0.4.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+python_bitbankcc-0.0.4.dist-info/LICENSE,sha256=KrJCb7NoGwW6QrwuEl8fFcw4VNJXI-8O-Pu34R6OpmQ,1103
+python_bitbankcc-0.0.4.dist-info/METADATA,sha256=GsBG094aouAdwDUzXWLZ8wJmTGdwGx6CckHKcQPvLas,402
+python_bitbankcc-0.0.4.dist-info/RECORD,,
+python_bitbankcc-0.0.4.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+python_bitbankcc-0.0.4.dist-info/direct_url.json,sha256=SX3R15AX4l_MTL9KBaEqvNjx8ZT1RYAfPIZZ5aRBFqo,146
+python_bitbankcc-0.0.4.dist-info/top_level.txt,sha256=doqa2y4kh8Xt0g3bZsJ_tLbM8FhuPMBM9Tnh5UaZ4wA,17
+python_bitbankcc/__init__.py,sha256=c3UXv3krNFMLBpUSDpnUH18LJqIddOh1pN5Mdiu28bE,1299
+python_bitbankcc/__pycache__/__init__.cpython-37.pyc,,
+python_bitbankcc/__pycache__/private_api.cpython-37.pyc,,
+python_bitbankcc/__pycache__/public_api.cpython-37.pyc,,
+python_bitbankcc/__pycache__/utils.cpython-37.pyc,,
+python_bitbankcc/private_api.py,sha256=7qk_212EbTvWcoGnkTnqNOubEcHoHgZuFXjgfuEkCwM,4738
+python_bitbankcc/public_api.py,sha256=L8_iqcAgEWRx670V2erR5AJD7IEDk0WTF3mI6pLWwKM,2267
+python_bitbankcc/utils.py,sha256=C6fiZU8C-fVmtaMgfsPBiaFUXVQvNg3qad10Ivjka9o,5659
