@@ -16,7 +16,8 @@ class DailyResize(object):
     def create_new(self):
         # create new table
         today = datetime.date.today()
-        new_table_name = "{}_{}".format(self.table_prefix, self._format_date(today))
+        tomorrow = datetime.date.today() + datetime.timedelta(1)
+        new_table_name = "{}_{}".format(self.table_prefix, self._format_date(tomorrow))
         dynamodb.create_table(
             TableName = new_table_name,
             KeySchema = [
